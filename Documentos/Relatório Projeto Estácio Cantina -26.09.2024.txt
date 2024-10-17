@@ -1,0 +1,12 @@
+Projeto Estácio - Cantina
+
+Relatório 26/09/2024
+
+Banco de dados
+- Priorizar venda e sistema de estoque, saídas para ser automáticas.
+
+Backend
+- Montar funcionários, loging e níveis de acesso.
+
+Frontend
+- protótipo de tela
