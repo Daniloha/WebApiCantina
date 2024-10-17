@@ -174,30 +174,15 @@ Para o armazenamento e gerenciamento dos dados, utiliza-se o banco de dados MySQ
 
 O projeto envolve os seguintes stakeholders:
 
-- **Administrador**: Responsável pela gestão geral da cantina, incluindo o controle de estoque, cadastro de produtos, e monitoramento das transações. O administrador possui acesso privilegiado para editar informações dos colaboradores e visualizar relatórios financeiros e de vendas, garantindo a operação eficiente da cantina.
-- **Colaborador**: Funciona como operador de caixa ou atendente na cantina. Este usuário registra as vendas e processa os pagamentos dos clientes, utilizando o sistema para realizar os lançamentos de transações de forma rápida e precisa, além de poder verificar o estoque dos produtos para informar clientes sobre a disponibilidade.
-- **Usuário Comum**: Cliente da cantina que utiliza o aplicativo para realizar pedidos e verificar informações como o cardápio e preços dos produtos disponíveis. Os usuários comuns não têm acesso aos relatórios ou controle de estoque, mas podem usufruir de uma experiência de compra mais ágil e organizada.
-- **Professor Orientador**: Atua como mentor do projeto, fornecendo orientações e feedback sobre o desenvolvimento da solução. Ajuda a garantir que os requisitos sejam atendidos e que o sistema desenvolvido esteja de acordo com as necessidades dos administradores e colaboradores
+1. **Administrador**: Responsável pela gestão geral da cantina, incluindo o controle de estoque, cadastro de produtos, e monitoramento das transações. O administrador possui acesso privilegiado para editar informações dos colaboradores e visualizar relatórios financeiros e de vendas, garantindo a operação eficiente da cantina.
+2. **Colaborador**: Funciona como operador de caixa ou atendente na cantina. Este usuário registra as vendas e processa os pagamentos dos clientes, utilizando o sistema para realizar os lançamentos de transações de forma rápida e precisa, além de poder verificar o estoque dos produtos para informar clientes sobre a disponibilidade.
+3. **Usuário Comum**: Cliente da cantina que utiliza o aplicativo para realizar pedidos e verificar informações como o cardápio e preços dos produtos disponíveis. Os usuários comuns não têm acesso aos relatórios ou controle de estoque, mas podem usufruir de uma experiência de compra mais ágil e organizada.
+4. **Professor Orientador**: Atua como mentor do projeto, fornecendo orientações e feedback sobre o desenvolvimento da solução. Ajuda a garantir que os requisitos sejam atendidos e que o sistema desenvolvido esteja de acordo com as necessidades dos administradores e colaboradores.
 
-Este projeto foi criado utilizando a bibioteca React-Native de JavaScript para a criação de interfaces visuais para dispositivos móveis. Embora não seja um framework completo como Angular ou Vue.js, o React Native é uma biblioteca que permite criar interfaces de usuário nativas para iOS e Android usando componentes declarativos semelhantes aos do React.
 
-Para a criação e estruturação do backend, faz-se necessário autilização de um superset de JavaScript chamado Typescript, o que permite a criação de código mais robusto e seguro. Além de adicionar uma tipagem estática de dados, o Typescript ofereceoutras funcionalidades como classes, enums, interfaces e etc.
+#### **Requisitos**
 
-#### Stakeholders
-
-Este projeto possui inicialmente quantro stakeholders:
-
-Professor orientador: Responsável por trazer "o problema a ser resolvido". Comunica os requisitos dos usuários administradores para os desenvolvedores e valida as etapasdo projeto.
-
-Usuario administrador: Usuário mais privilegiado em relação a níveis de acesso ao sistema. Número limitado entre 10 e 15 contas utilizadas pelas pessoas que devem cadastrar as vagas de trabalho no sistema, além de alguns privilégios de edição e bloqueio de contas.
-
-Usuario comum: O usuário com o nivel de acesso mais básico ao sistema. Utilizado por qualquer pessoa que queira ter acesso ao sistema e se candidataras vagasá cadastradas.
-
-Usuario estuante: É um usuario comum, porém com algumas informações a mais, como matrícula semestre e curso matriculado.
-
-#### Requisito
-
-- **Funcionais**: Descrevem as funcionalidades do sistema.
+* **Funcionais**: Descrevem as funcionalidades do sistema.
 
 | TIPO | ID  | DESCRIÇÃO                                                                                                                                                    |
 | ---- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
