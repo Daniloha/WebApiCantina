@@ -50,16 +50,29 @@ namespace WebApiCantina.Controllers
             return Ok(Categoria);
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Categoria Categoria)
-        {
-            if (Categoria == null) return BadRequest();
-            var CategoriaExistente = _context.Categorias.Find(id);
-            if (CategoriaExistente == null) return NotFound();
-            _context.Categorias.Update(Categoria);
-            _context.SaveChanges();
-            return Ok(Categoria);
-        }
+    [HttpPut("{id}")]
+    public IActionResult Put(int id, [FromBody] Categoria categoria)
+    {
+        // Verifica se o objeto da categoria é nulo
+        if (categoria == null)
+            return BadRequest("Dados inválidos.");
+
+        // Busca a categoria existente no banco de dados
+        var categoriaExistente = _context.Categorias.Find(id);
+        if (categoriaExistente == null)
+            return NotFound("Categoria não encontrada.");
+
+        // Atualiza os campos necessários da categoria existente
+        categoriaExistente.NomeCategoria = categoria.NomeCategoria;
+        categoriaExistente.DescricaoCategoria = categoria.DescricaoCategoria;
+        categoriaExistente.ImagemCategoria = categoria.ImagemCategoria;
+        // Adicione outros campos que deseja atualizar
+
+        // Salva as alterações no contexto
+        _context.SaveChanges();
+
+        return Ok(categoriaExistente);
+    }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

@@ -179,7 +179,6 @@ O projeto envolve os seguintes stakeholders:
 3. **Usuário Comum**: Cliente da cantina que utiliza o aplicativo para realizar pedidos e verificar informações como o cardápio e preços dos produtos disponíveis. Os usuários comuns não têm acesso aos relatórios ou controle de estoque, mas podem usufruir de uma experiência de compra mais ágil e organizada.
 4. **Professor Orientador**: Atua como mentor do projeto, fornecendo orientações e feedback sobre o desenvolvimento da solução. Ajuda a garantir que os requisitos sejam atendidos e que o sistema desenvolvido esteja de acordo com as necessidades dos administradores e colaboradores.
 
-
 #### **Requisitos**
 
 * **Funcionais**: Descrevem as funcionalidades do sistema.
@@ -362,6 +361,33 @@ A escolha da arquitetura **monolítica** foi apropriada em várias sentidos, e q
 
 1. **Diagrama de Classes** 🚧
 
+```mermaid
+classDiagram
+    class Usuario {
+        +String nome
+        +String email
+        +void autenticar()
+    }
+
+    class Administrador {
+        +void gerenciarSistema()
+    }
+    class Colaborador{
+        +int matricula
+        +void acessarConteudo()
+    }
+
+    class Comum{
+        +int matricula
+        +void acessarConteudo()
+    }
+
+    Usuario <|-- Administrador : herda
+    Usuario <|-- Comum: herda
+    Usuario <|-- Colaborador: herda
+
+```
+
 ...
 
 #### Especificações Detalhadas de Componentes
@@ -392,9 +418,100 @@ A escolha da arquitetura **monolítica** foi apropriada em várias sentidos, e q
 
 > ### Documentação de Testes
 
----
 
-Esta documentação será produzida durante a próxima fase do projeto onde testaremos a versão beta.
+
+Os testes de software são fundamentais para garantir a qualidade e o bom funcionamento de um sistema. Eles podem ser classificados de diversas formas, dependendo do nível, do método de execução e do objetivo específico. Aqui está uma lista dos principais tipos de testes, com uma breve descrição de cada um:
+
+### 1. **Testes Funcionais**
+
+* **Descrição** : Avaliam se o software atende aos requisitos funcionais especificados, ou seja, se ele realiza as funções que foram definidas. São realizados sem conhecimento do código-fonte, focando no que o sistema faz.
+* **Exemplos** : Testes de integração, teste de sistema, teste de aceitação.
+
+### 2. **Testes Não Funcionais**
+
+* **Descrição** : Verificam aspectos de desempenho e comportamento do software, que não estão relacionados diretamente com funcionalidades específicas, como desempenho, segurança, usabilidade e confiabilidade.
+* **Exemplos** : Testes de carga, testes de estresse, testes de usabilidade, testes de segurança.
+
+### 3. **Testes de Caixa Preta**
+
+* **Descrição** : Avaliam o sistema a partir de suas entradas e saídas, sem considerar o código-fonte ou a estrutura interna. O testador não precisa ter conhecimento do código do sistema.
+* **Exemplos** : Teste funcional, teste de interface, teste de sistema.
+
+### 4. **Testes de Caixa Branca**
+
+* **Descrição** : Testam a lógica e a estrutura interna do código. O testador tem acesso ao código-fonte e desenvolve testes que validam fluxos específicos, como caminhos de decisão e loops.
+* **Exemplos** : Teste de cobertura de código, teste de fluxo de controle, teste de caminho.
+
+### 5. **Testes de Caixa Cinza**
+
+* **Descrição** : Combina elementos dos testes de caixa preta e caixa branca. O testador tem algum conhecimento sobre a estrutura interna do sistema, mas ainda foca principalmente em aspectos funcionais.
+* **Exemplo** : Avaliar interações de APIs com uma compreensão limitada da implementação interna.
+
+### 6. **Testes Unitários**
+
+* **Descrição** : Avaliam unidades individuais do código (funções, métodos, classes) de forma isolada, garantindo que cada parte do sistema funcione conforme o esperado.
+* **Objetivo** : Detectar erros em unidades específicas antes que sejam integradas a outras partes do sistema.
+* **Ferramentas Comuns** : JUnit (Java), NUnit (.NET), Jest (JavaScript).
+
+### 7. **Testes de Integração**
+
+* **Descrição** : Avaliam a interação entre diferentes módulos ou componentes do sistema, garantindo que eles funcionem bem em conjunto.
+* **Objetivo** : Identificar problemas de comunicação e integração entre partes do sistema que já foram testadas individualmente.
+
+### 8. **Testes de Sistema**
+
+* **Descrição** : Validam o sistema como um todo, verificando se ele atende aos requisitos especificados. Envolve testar o software em um ambiente que simule a operação real.
+* **Objetivo** : Avaliar o comportamento do sistema completo, incluindo todas as suas funcionalidades e interações.
+
+### 9. **Testes de Aceitação**
+
+* **Descrição** : São realizados pelos usuários finais ou clientes para verificar se o sistema atende às suas necessidades e se está pronto para ser colocado em produção.
+* **Tipos** :
+  * **Testes Alfa** : Realizados pelo cliente em ambiente de desenvolvimento.
+  * **Testes Beta** : Realizados pelo cliente em ambiente real de produção.
+
+### 10. **Testes de Regressão**
+
+* **Descrição** : São realizados para garantir que mudanças no código, como correções de bugs ou novas funcionalidades, não introduzam novos problemas em partes já testadas do sistema.
+* **Objetivo** : Verificar que as funcionalidades existentes continuem funcionando após as mudanças.
+
+### 11. **Testes de Performance**
+
+* **Descrição** : Avaliam a capacidade do sistema de lidar com uma carga de trabalho específica, sua estabilidade, tempo de resposta e uso de recursos.
+* **Tipos** :
+  * **Testes de Carga** : Verificam o comportamento do sistema sob uma carga esperada de usuários.
+  * **Testes de Estresse** : Testam os limites do sistema, como ele se comporta em situações extremas de carga.
+  * **Testes de Volume** : Avaliam como o sistema se comporta com grandes volumes de dados.
+  * **Testes de Escalabilidade** : Avaliam a capacidade do sistema de se adaptar a um aumento de carga.
+
+### 12. **Testes de Segurança**
+
+* **Descrição** : Verificam a proteção do sistema contra ameaças, como acessos não autorizados, vulnerabilidades de segurança, ataques e integridade dos dados.
+* **Objetivo** : Garantir a proteção dos dados e da infraestrutura do software contra falhas de segurança.
+
+### 13. **Testes de Usabilidade**
+
+* **Descrição** : Avaliam a facilidade de uso da interface do sistema, garantindo que ele seja intuitivo e adequado para o usuário final.
+* **Objetivo** : Melhorar a experiência do usuário e identificar problemas de design que possam dificultar o uso do software.
+
+### 14. **Testes de Manutenibilidade**
+
+* **Descrição** : Avaliam a facilidade com que o software pode ser modificado para correção de erros, melhorias ou adaptações a novos requisitos.
+* **Objetivo** : Garantir que futuras alterações não comprometam a qualidade e o funcionamento do sistema.
+
+### 15. **Testes de Compatibilidade**
+
+* **Descrição** : Verificam se o software é compatível com diferentes sistemas operacionais, navegadores, dispositivos e plataformas.
+* **Objetivo** : Garantir que o software funcione corretamente em diferentes ambientes e configurações.
+
+### 16. **Testes de Portabilidade**
+
+* **Descrição** : Avaliam a capacidade do software de ser transferido de um ambiente para outro.
+* **Objetivo** : Identificar problemas que possam surgir ao mover o software para diferentes plataformas ou sistemas.
+
+Cada tipo de teste tem um papel específico no ciclo de desenvolvimento de software, sendo importante para garantir um produto final confiável e de alta qualidade. A escolha dos tipos de testes a serem realizados depende das necessidades do projeto, dos recursos disponíveis e dos requisitos do sistema.
+
+**4o**
 
 ---
 

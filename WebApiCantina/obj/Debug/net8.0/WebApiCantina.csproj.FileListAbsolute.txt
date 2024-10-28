@@ -108,3 +108,7 @@ C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApi
 C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\WebApiCantina.pdb
 C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\WebApiCantina.genruntimeconfig.cache
 C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\ref\WebApiCantina.dll
+C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\bin\Debug\net8.0\WebApiCantina.staticwebassets.endpoints.json
+C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\WebApiCantina.sourcelink.json
+C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\nilo_\OneDrive\Desktop\Projetos\.Net\WebApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets\msbuild.WebApiCantina.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using WebApiCantina.Context;
 using WebApiCantina.Models.Estoque;
@@ -29,11 +30,26 @@ namespace WebApiCantina.Controllers
          * IActionResult - Retorna um tipo complexo (IActionResult).
          */
 
-        [HttpGet]
-        public ActionResult<IEnumerable<Produto>> Get()
+    [HttpGet]
+public ActionResult<IEnumerable<object>> Get()
+{
+    var produtos = _context.Produtos
+        .Include(p => p.CategoriaProduto) // Carrega a entidade CategoriaProduto para ter acesso ao nome.
+        .Select(p => new 
         {
-            return _context.Produtos.ToList();
-        }
+            p.IdProduto,
+            p.NomeProduto,
+            p.DescricaoProduto,
+            NomeCategoria = p.CategoriaProduto != null ? p.CategoriaProduto.NomeCategoria : null,
+            p.QuantidadeEstoque,
+            p.PrecoVenda,
+            p.Imagem,
+            p.DataCriacao
+        })
+        .ToList();
+
+    return Ok(produtos);
+}
 
         [HttpGet("{id}")]
         public ActionResult<Produto> Get(int id)
@@ -66,6 +82,28 @@ namespace WebApiCantina.Controllers
             if (produto == null) return BadRequest();
             var produtoExistente = _context.Produtos.Find(id);
             if (produtoExistente == null) return NotFound();
+
+            Categoria? categoria = null;
+            if (produto.CategoriaProduto.IdCategoria > 0)
+            {
+                categoria = _context.Categorias.Find(
+                    produto.
+                    CategoriaProduto.
+                    IdCategoria);
+            }
+            else if (!string.IsNullOrEmpty(produto.CategoriaProduto.
+                                            NomeCategoria))
+            {
+                categoria = _context.Categorias.FirstOrDefault(
+                    c => c.NomeCategoria == produto.
+                    CategoriaProduto.
+                    NomeCategoria);
+            }
+
+            if (categoria == null) return BadRequest("Categoria não encontrada.");
+
+    produtoExistente.CategoriaProduto = categoria;
+
             _context.Produtos.Update(produto);
             _context.SaveChanges();
             return Ok(produto);

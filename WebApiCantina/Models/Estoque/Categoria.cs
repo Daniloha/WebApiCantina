@@ -21,8 +21,7 @@ namespace WebApiCantina.Models.Estoque
         [Required]
         public DateOnly DataCriacao { get; set; } = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
 
-        [Required]
         [JsonIgnore]
-        public virtual ICollection<Produto>? Produtos { get; set; }
+        public  ICollection<Produto>? Produtos { get; set; }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiCantina")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c552d3e54116f6fcb19f5701d70f35892504a2f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cfd0cb5a8b280f76b0b5244ccdd240f613af424")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiCantina")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiCantina")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

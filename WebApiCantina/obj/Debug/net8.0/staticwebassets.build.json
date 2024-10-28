@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "lxiRfEA28x7fIamo/keLYSYEI2W9jdzoPoc5UL06v7w=",
+  "Hash": "LIWP+WpL7p+MwC/jPzZVcuS/OihDprzyBewhhLf7QRw=",
   "Source": "WebApiCantina",
   "BasePath": "_content/WebApiCantina",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }
