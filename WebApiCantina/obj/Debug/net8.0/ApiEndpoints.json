@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Models.Estoque.Categoria, WebApiCantina, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Domain.Models.Estoque.Categoria, WebApiCantina.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -29,7 +29,7 @@
     "Parameters": [
       {
         "Name": "Categoria",
-        "Type": "WebApiCantina.Models.Estoque.Categoria",
+        "Type": "WebApiCantina.Domain.Models.Estoque.Categoria",
         "IsRequired": true
       }
     ],
@@ -51,7 +51,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebApiCantina.Models.Estoque.Categoria",
+        "Type": "WebApiCantina.Domain.Models.Estoque.Categoria",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -75,8 +75,8 @@
         "IsRequired": true
       },
       {
-        "Name": "Categoria",
-        "Type": "WebApiCantina.Models.Estoque.Categoria",
+        "Name": "categoria",
+        "Type": "WebApiCantina.Domain.Models.Estoque.Categoria",
         "IsRequired": true
       }
     ],
@@ -108,7 +108,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Models.Estoque.Produto, WebApiCantina, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -128,7 +128,7 @@
     "Parameters": [
       {
         "Name": "produto",
-        "Type": "WebApiCantina.Models.Estoque.Produto",
+        "Type": "WebApiCantina.Domain.Models.Estoque.Produto",
         "IsRequired": true
       }
     ],
@@ -150,7 +150,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebApiCantina.Models.Estoque.Produto",
+        "Type": "WebApiCantina.Domain.Models.Estoque.Produto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -175,7 +175,7 @@
       },
       {
         "Name": "produto",
-        "Type": "WebApiCantina.Models.Estoque.Produto",
+        "Type": "WebApiCantina.Domain.Models.Estoque.Produto",
         "IsRequired": true
       }
     ],
@@ -213,7 +213,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Models.Estoque.Produto, WebApiCantina, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Domain.Models.Estoque.Produto, WebApiCantina.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

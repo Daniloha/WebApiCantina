@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "egNRt9zuIWU=",
+  "dgSpecHash": "geODrf4A74Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\nilo_\\OneDrive\\Desktop\\Projetos\\.Net\\WebApiCantina\\WebApiCantina\\WebApiCantina\\WebApiCantina.csproj",
+  "projectFilePath": "C:\\Users\\nilo_\\Favorites\\Links\\Projetos\\.Net\\ApiCantina\\WebApiCantina\\WebApiCantina\\WebApiCantina.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nilo_\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nilo_\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

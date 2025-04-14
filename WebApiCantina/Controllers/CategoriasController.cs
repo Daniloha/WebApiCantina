@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebApiCantina.Context;
-using WebApiCantina.Models.Estoque;
+using WebApiCantina.Data.Context;
+using WebApiCantina.Domain.Models.Estoque;
+
 
 namespace WebApiCantina.Controllers
 {

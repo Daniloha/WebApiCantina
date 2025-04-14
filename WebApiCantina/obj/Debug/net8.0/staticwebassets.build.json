@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "LIWP+WpL7p+MwC/jPzZVcuS/OihDprzyBewhhLf7QRw=",
-  "Source": "WebApiCantina",
-  "BasePath": "_content/WebApiCantina",
+  "Hash": "db6EYlBdBCOZGLrPXfCCcsVlq/AFOVl2wISsoEi4gXE=",
+  "Source": "WebApiCantina.Api",
+  "BasePath": "_content/WebApiCantina.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

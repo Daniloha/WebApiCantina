@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiCantina.Domain\WebApiCantina.Domain.csproj" />
+    <ProjectReference Include="..\WebApiCantina.Shared\WebApiCantina.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

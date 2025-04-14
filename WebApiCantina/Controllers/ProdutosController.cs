@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using WebApiCantina.Context;
-using WebApiCantina.Models.Estoque;
+using WebApiCantina.Data.Context;
+using WebApiCantina.Domain.Models.Estoque;
 
 namespace WebApiCantina.Controllers
 {
