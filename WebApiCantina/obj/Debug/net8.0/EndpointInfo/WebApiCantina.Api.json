@@ -185,19 +185,25 @@
               "text/plain": {
                 "schema": {
                   "type": "array",
-                  "items": { }
+                  "items": {
+                    "$ref": "#/components/schemas/ProdutoDto"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": { }
+                  "items": {
+                    "$ref": "#/components/schemas/ProdutoDto"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
                   "type": "array",
-                  "items": { }
+                  "items": {
+                    "$ref": "#/components/schemas/ProdutoDto"
+                  }
                 }
               }
             }
@@ -212,17 +218,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Produto"
+                "$ref": "#/components/schemas/ProdutoRequest"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Produto"
+                "$ref": "#/components/schemas/ProdutoRequest"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Produto"
+                "$ref": "#/components/schemas/ProdutoRequest"
               }
             }
           }
@@ -256,17 +262,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "$ref": "#/components/schemas/ProdutoDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "$ref": "#/components/schemas/ProdutoDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "$ref": "#/components/schemas/ProdutoDto"
                 }
               }
             }
@@ -359,7 +365,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produto"
+                    "$ref": "#/components/schemas/ProdutoDto"
                   }
                 }
               },
@@ -367,7 +373,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produto"
+                    "$ref": "#/components/schemas/ProdutoDto"
                   }
                 }
               },
@@ -375,7 +381,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Produto"
+                    "$ref": "#/components/schemas/ProdutoDto"
                   }
                 }
               }
@@ -409,9 +415,7 @@
             "type": "string"
           },
           "imagemCategoria": {
-            "minLength": 1,
-            "type": "string",
-            "format": "uri"
+            "$ref": "#/components/schemas/UrlImagem"
           },
           "dataCriacao": {
             "type": "string",
@@ -420,11 +424,21 @@
         },
         "additionalProperties": false
       },
+      "Preco": {
+        "type": "object",
+        "properties": {
+          "valor": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "Produto": {
         "required": [
-          "categoriaProduto",
           "dataCriacao",
           "descricaoProduto",
+          "idCategoria",
           "imagem",
           "nomeProduto",
           "precoVenda",
@@ -446,6 +460,10 @@
             "minLength": 0,
             "type": "string"
           },
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
           "categoriaProduto": {
             "$ref": "#/components/schemas/Categoria"
           },
@@ -454,17 +472,91 @@
             "format": "int32"
           },
           "precoVenda": {
-            "type": "number",
-            "format": "double"
+            "$ref": "#/components/schemas/Preco"
           },
           "imagem": {
-            "minLength": 1,
-            "type": "string",
-            "format": "uri"
+            "$ref": "#/components/schemas/UrlImagem"
           },
           "dataCriacao": {
             "type": "string",
             "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProdutoDto": {
+        "type": "object",
+        "properties": {
+          "idProduto": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nomeProduto": {
+            "type": "string",
+            "nullable": true
+          },
+          "descricaoProduto": {
+            "type": "string",
+            "nullable": true
+          },
+          "nomeCategoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantidadeEstoque": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precoVenda": {
+            "$ref": "#/components/schemas/Preco"
+          },
+          "imagem": {
+            "$ref": "#/components/schemas/UrlImagem"
+          },
+          "dataCriacao": {
+            "type": "string",
+            "format": "date"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProdutoRequest": {
+        "type": "object",
+        "properties": {
+          "nomeProduto": {
+            "type": "string",
+            "nullable": true
+          },
+          "descricaoProduto": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantidadeEstoque": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precoVenda": {
+            "$ref": "#/components/schemas/Preco"
+          },
+          "precoCusto": {
+            "$ref": "#/components/schemas/Preco"
+          },
+          "imagem": {
+            "$ref": "#/components/schemas/UrlImagem"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UrlImagem": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using WebApiCantina.Data.Context;
+using WebApiCantina.Application.DTOs;
+using WebApiCantina.Application.Services.Mapping;
+using WebApiCantina.Data.Services.Repositories;
 using WebApiCantina.Domain.Models.Estoque;
+using WebApiCantina.Domain.Services.Interfaces;
 
 namespace WebApiCantina.Controllers
 {
@@ -16,107 +13,122 @@ namespace WebApiCantina.Controllers
     public class ProdutosController : ControllerBase
     {
         private readonly ILogger<ProdutosController> _logger;
-        private readonly AppDbContext _context;
+        private readonly IProdutosRepository _repository;
 
-        public ProdutosController(ILogger<ProdutosController> logger, AppDbContext context)
+        public ProdutosController(ILogger<ProdutosController> logger, IProdutosRepository repository)
         {
             _logger = logger;
-            _context = context;
+            _repository = repository;
         }
 
-         /* Tipos de retornos (Action/ActionResult/IActionResult):
-         * Action - Retorna um tipo simples (ActionResult).
-         * ActionResult - Retorna um tipo complexo (ActionResult).
-         * IActionResult - Retorna um tipo complexo (IActionResult).
-         */
-
-    [HttpGet]
-public ActionResult<IEnumerable<object>> Get()
-{
-    var produtos = _context.Produtos
-        .Include(p => p.CategoriaProduto) // Carrega a entidade CategoriaProduto para ter acesso ao nome.
-        .Select(p => new 
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ProdutoDto>>> Get()
         {
-            p.IdProduto,
-            p.NomeProduto,
-            p.DescricaoProduto,
-            NomeCategoria = p.CategoriaProduto != null ? p.CategoriaProduto.NomeCategoria : null,
-            p.QuantidadeEstoque,
-            p.PrecoVenda,
-            p.Imagem,
-            p.DataCriacao
-        })
-        .ToList();
-
-    return Ok(produtos);
-}
+            var produtos = await _repository.GetAllIncludingAsync(p => p.CategoriaProduto);
+            var resultado = produtos.Select(p => p.ToDto()).ToList();
+            return Ok(resultado);
+        }
 
         [HttpGet("{id}")]
-        public ActionResult<Produto> Get(int id)
+        public async Task<ActionResult<ProdutoDto>> GetbyId(int id)
         {
-            var produto = _context.Produtos.Find(id);
-            if (produto == null) return NotFound("Produto não encontrado");
-            return produto;
+            var produto = await _repository.GetByIdAsync(id);
+
+            if (produto == null)
+            {
+                return NotFound();
+            }
+
+            var produtoResponse = new ProdutoResponse
+            {
+                IdProduto = produto.IdProduto,
+                NomeProduto = produto.NomeProduto,
+                DescricaoProduto = produto.DescricaoProduto,
+                NomeCategoria = produto.CategoriaProduto.NomeCategoria,  // Nome da categoria
+                QuantidadeEstoque = produto.QuantidadeEstoque,
+                PrecoVenda = produto.PrecoVenda,
+                Imagem = produto.Imagem,
+                DataCriacao = produto.DataCriacao
+            };
+
+            return Ok(produtoResponse);
         }
 
         [HttpGet("categoria/{id}")]
-        public ActionResult<IEnumerable<Produto>> GetPorCategoria(int id)
+        public async Task<ActionResult<IEnumerable<ProdutoDto>>> GetPorCategoria(int id)
         {
-            var produtos = _context.Produtos.Where(p => p.CategoriaProduto.IdCategoria == id).ToList();
-            if (produtos == null) return NotFound("Produtos não encontrados");
-            return produtos;
+            var produtos = await _repository.GetAllIncludingAsync(p => p.CategoriaProduto);
+
+            var filtrados = produtos
+                .Where(p => p.CategoriaProduto != null && p.CategoriaProduto.IdCategoria == id)
+                .Select(p => p.ToDto())
+                .ToList();
+
+            if (!filtrados.Any()) return NotFound("Produtos não encontrados");
+
+            return Ok(filtrados);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Produto produto)
+        public async Task<IActionResult> CreateProduto([FromBody] ProdutoRequest request)
         {
-            if (produto == null) return BadRequest();
-            _context.Produtos.Add(produto);
-            _context.SaveChanges();
-            return Ok(produto);
+            // Mapeamento manual de ProdutoRequest para Produto
+            var produto = new Produto
+            {
+                NomeProduto = request.NomeProduto,
+                DescricaoProduto = request.DescricaoProduto,
+                IdCategoria = request.IdCategoria,
+                QuantidadeEstoque = request.QuantidadeEstoque,
+                PrecoVenda = request.PrecoVenda,
+                PrecoCusto = request.PrecoCusto,
+                Imagem = request.Imagem,
+                DataCriacao = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day) // Data gerada no backend
+            };
+
+            // Adiciona o produto ao contexto e salva no banco de dados
+            await _repository.AddAsync(produto);
+            
+
+            // Mapeamento manual de Produto para ProdutoResponse
+            var produtoResponse = new ProdutoResponse
+            {
+                IdProduto = produto.IdProduto,
+                NomeProduto = produto.NomeProduto,
+                DescricaoProduto = produto.DescricaoProduto,
+                NomeCategoria = produto.CategoriaProduto.NomeCategoria, // Nome da categoria
+                QuantidadeEstoque = produto.QuantidadeEstoque,
+                PrecoVenda = produto.PrecoVenda,
+                Imagem = produto.Imagem,
+                DataCriacao = produto.DataCriacao
+            };
+
+            return CreatedAtAction(nameof(GetbyId), new { id = produto.IdProduto }, produtoResponse);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Produto produto)
+        public async Task<IActionResult> Put(int id, [FromBody] Produto produto)
         {
-            if (produto == null) return BadRequest();
-            var produtoExistente = _context.Produtos.Find(id);
-            if (produtoExistente == null) return NotFound();
+            if (produto == null || id != produto.IdProduto)
+                return BadRequest("Dados inválidos");
 
-            Categoria? categoria = null;
-            if (produto.CategoriaProduto.IdCategoria > 0)
-            {
-                categoria = _context.Categorias.Find(
-                    produto.
-                    CategoriaProduto.
-                    IdCategoria);
-            }
-            else if (!string.IsNullOrEmpty(produto.CategoriaProduto.
-                                            NomeCategoria))
-            {
-                categoria = _context.Categorias.FirstOrDefault(
-                    c => c.NomeCategoria == produto.
-                    CategoriaProduto.
-                    NomeCategoria);
-            }
+            var produtoExistente = await _repository.GetByIdAsync(id);
+            if (produtoExistente == null)
+                return NotFound("Produto não encontrado");
 
-            if (categoria == null) return BadRequest("Categoria não encontrada.");
+            produtoExistente.AtualizarCom(produto);
 
-    produtoExistente.CategoriaProduto = categoria;
-
-            _context.Produtos.Update(produto);
-            _context.SaveChanges();
-            return Ok(produto);
+            await _repository.UpdateAsync(produtoExistente);
+            return Ok(produtoExistente.ToDto());
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var produto = _context.Produtos.Find(id);
-            if (produto == null) return NotFound();
-            _context.Produtos.Remove(produto);
-            _context.SaveChanges();
-            return Ok(produto);
+            var produto = await _repository.GetByIdAsync(id);
+            if (produto == null) return NotFound("Produto não encontrado");
+
+            await _repository.DeleteAsync(produto);
+            return Ok(produto.ToDto());
         }
-    }  
+    }
 }

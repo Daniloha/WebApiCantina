@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "m2A+s/GxQe0=",
+  "dgSpecHash": "bogwcMl3yZM=",
   "success": true,
   "projectFilePath": "C:\\Users\\nilo_\\Favorites\\Links\\Projetos\\.Net\\ApiCantina\\WebApiCantina\\WebApiCantina.Domain\\WebApiCantina.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nilo_\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.10\\microsoft.entityframeworkcore.abstractions.8.0.10.nupkg.sha512"
+  ],
   "logs": []
 }

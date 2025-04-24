@@ -22,7 +22,7 @@ namespace WebApiCantina.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("WebApiCantina.Models.Estoque.Categoria", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Estoque.Categoria", b =>
                 {
                     b.Property<int>("IdCategoria")
                         .ValueGeneratedOnAdd()
@@ -37,10 +37,6 @@ namespace WebApiCantina.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ImagemCategoria")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("NomeCategoria")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -50,7 +46,7 @@ namespace WebApiCantina.Migrations
                     b.ToTable("Categorias");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Estoque.Produto", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Estoque.Produto", b =>
                 {
                     b.Property<int>("IdProduto")
                         .ValueGeneratedOnAdd()
@@ -61,12 +57,6 @@ namespace WebApiCantina.Migrations
                     b.Property<int?>("CarrinhoIdCarrinho")
                         .HasColumnType("int");
 
-                    b.Property<int>("CategoriaProdutoIdCategoria")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ComumIdUsuario")
-                        .HasColumnType("int");
-
                     b.Property<DateOnly>("DataCriacao")
                         .HasColumnType("date");
 
@@ -75,20 +65,13 @@ namespace WebApiCantina.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("varchar(500)");
 
-                    b.Property<string>("Imagem")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("IdCategoria")
+                        .HasColumnType("int");
 
                     b.Property<string>("NomeProduto")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
-
-                    b.Property<double>("PrecoCusto")
-                        .HasColumnType("double");
-
-                    b.Property<double>("PrecoVenda")
-                        .HasColumnType("double");
 
                     b.Property<int>("QuantidadeEstoque")
                         .HasColumnType("int");
@@ -97,14 +80,12 @@ namespace WebApiCantina.Migrations
 
                     b.HasIndex("CarrinhoIdCarrinho");
 
-                    b.HasIndex("CategoriaProdutoIdCategoria");
-
-                    b.HasIndex("ComumIdUsuario");
+                    b.HasIndex("IdCategoria");
 
                     b.ToTable("Produtos");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Operacoes.Carrinho", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Operacoes.Carrinho", b =>
                 {
                     b.Property<int>("IdCarrinho")
                         .ValueGeneratedOnAdd()
@@ -118,9 +99,6 @@ namespace WebApiCantina.Migrations
                     b.Property<int>("ClienteIdUsuario")
                         .HasColumnType("int");
 
-                    b.Property<double>("ValorTotal")
-                        .HasColumnType("double");
-
                     b.Property<int>("VendedorIdUsuario")
                         .HasColumnType("int");
 
@@ -133,7 +111,7 @@ namespace WebApiCantina.Migrations
                     b.ToTable("Comandas");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Usuarios.Administrador", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Administrador", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
@@ -146,27 +124,13 @@ namespace WebApiCantina.Migrations
                         .HasMaxLength(6)
                         .HasColumnType("varchar(6)");
 
-                    b.Property<string>("CpfUsuario")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
-
                     b.Property<DateOnly>("DataCriacao")
                         .HasColumnType("date");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("NomeAdministrador")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
 
                     b.Property<string>("TipoUsuario")
                         .IsRequired()
@@ -177,7 +141,7 @@ namespace WebApiCantina.Migrations
                     b.ToTable("administradores");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Usuarios.Colaborador", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Colaborador", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
@@ -190,27 +154,13 @@ namespace WebApiCantina.Migrations
                         .HasMaxLength(6)
                         .HasColumnType("varchar(6)");
 
-                    b.Property<string>("CpfUsuario")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
-
                     b.Property<DateOnly>("DataCriacao")
                         .HasColumnType("date");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("NomeColaborador")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
 
                     b.Property<string>("TipoUsuario")
                         .IsRequired()
@@ -221,7 +171,7 @@ namespace WebApiCantina.Migrations
                     b.ToTable("colaboradores");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Usuarios.Comum", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Comum", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
@@ -229,27 +179,13 @@ namespace WebApiCantina.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdUsuario"));
 
-                    b.Property<string>("CpfUsuario")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
-
                     b.Property<DateOnly>("DataCriacao")
                         .HasColumnType("date");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("NomeUsuario")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("varchar(11)");
 
                     b.Property<string>("TipoUsuario")
                         .IsRequired()
@@ -260,57 +196,342 @@ namespace WebApiCantina.Migrations
                     b.ToTable("comuns");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Estoque.Produto", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Estoque.Categoria", b =>
                 {
-                    b.HasOne("WebApiCantina.Models.Operacoes.Carrinho", null)
+                    b.OwnsOne("WebApiCantina.Domain.VOs.UrlImagem", "ImagemCategoria", b1 =>
+                        {
+                            b1.Property<int>("CategoriaIdCategoria")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Url")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("CategoriaIdCategoria");
+
+                            b1.ToTable("Categorias");
+
+                            b1.WithOwner()
+                                .HasForeignKey("CategoriaIdCategoria");
+                        });
+
+                    b.Navigation("ImagemCategoria")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Estoque.Produto", b =>
+                {
+                    b.HasOne("WebApiCantina.Domain.Models.Operacoes.Carrinho", null)
                         .WithMany("Produtos")
                         .HasForeignKey("CarrinhoIdCarrinho");
 
-                    b.HasOne("WebApiCantina.Models.Estoque.Categoria", "CategoriaProduto")
+                    b.HasOne("WebApiCantina.Domain.Models.Estoque.Categoria", "CategoriaProduto")
                         .WithMany("Produtos")
-                        .HasForeignKey("CategoriaProdutoIdCategoria")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("IdCategoria")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("WebApiCantina.Models.Usuarios.Comum", null)
-                        .WithMany("Produtos")
-                        .HasForeignKey("ComumIdUsuario");
+                    b.OwnsOne("WebApiCantina.Domain.VOs.UrlImagem", "Imagem", b1 =>
+                        {
+                            b1.Property<int>("ProdutoIdProduto")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Url")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ProdutoIdProduto");
+
+                            b1.ToTable("Produtos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProdutoIdProduto");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Preco", "PrecoCusto", b1 =>
+                        {
+                            b1.Property<int>("ProdutoIdProduto")
+                                .HasColumnType("int");
+
+                            b1.Property<double>("Valor")
+                                .HasColumnType("double");
+
+                            b1.HasKey("ProdutoIdProduto");
+
+                            b1.ToTable("Produtos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProdutoIdProduto");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Preco", "PrecoVenda", b1 =>
+                        {
+                            b1.Property<int>("ProdutoIdProduto")
+                                .HasColumnType("int");
+
+                            b1.Property<double>("Valor")
+                                .HasColumnType("double");
+
+                            b1.HasKey("ProdutoIdProduto");
+
+                            b1.ToTable("Produtos");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ProdutoIdProduto");
+                        });
 
                     b.Navigation("CategoriaProduto");
+
+                    b.Navigation("Imagem")
+                        .IsRequired();
+
+                    b.Navigation("PrecoCusto")
+                        .IsRequired();
+
+                    b.Navigation("PrecoVenda")
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Operacoes.Carrinho", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Operacoes.Carrinho", b =>
                 {
-                    b.HasOne("WebApiCantina.Models.Usuarios.Comum", "Cliente")
-                        .WithMany()
+                    b.HasOne("WebApiCantina.Domain.Models.Usuarios.Comum", "Cliente")
+                        .WithMany("Carrinhos")
                         .HasForeignKey("ClienteIdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApiCantina.Models.Usuarios.Colaborador", "Vendedor")
+                    b.HasOne("WebApiCantina.Domain.Models.Usuarios.Colaborador", "Vendedor")
                         .WithMany()
                         .HasForeignKey("VendedorIdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Preco", "ValorTotal", b1 =>
+                        {
+                            b1.Property<int>("CarrinhoIdCarrinho")
+                                .HasColumnType("int");
+
+                            b1.Property<double>("Valor")
+                                .HasColumnType("double");
+
+                            b1.HasKey("CarrinhoIdCarrinho");
+
+                            b1.ToTable("Comandas");
+
+                            b1.WithOwner()
+                                .HasForeignKey("CarrinhoIdCarrinho");
+                        });
+
                     b.Navigation("Cliente");
+
+                    b.Navigation("ValorTotal")
+                        .IsRequired();
 
                     b.Navigation("Vendedor");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Estoque.Categoria", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Administrador", b =>
+                {
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Cpf", "CpfUsuario", b1 =>
+                        {
+                            b1.Property<int>("AdministradorIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("AdministradorIdUsuario");
+
+                            b1.ToTable("administradores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AdministradorIdUsuario");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Email", "Email", b1 =>
+                        {
+                            b1.Property<int>("AdministradorIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Endereco")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("AdministradorIdUsuario");
+
+                            b1.ToTable("administradores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AdministradorIdUsuario");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Telefone", "Telefone", b1 =>
+                        {
+                            b1.Property<int>("AdministradorIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("AdministradorIdUsuario");
+
+                            b1.ToTable("administradores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("AdministradorIdUsuario");
+                        });
+
+                    b.Navigation("CpfUsuario")
+                        .IsRequired();
+
+                    b.Navigation("Email")
+                        .IsRequired();
+
+                    b.Navigation("Telefone")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Colaborador", b =>
+                {
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Cpf", "CpfUsuario", b1 =>
+                        {
+                            b1.Property<int>("ColaboradorIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ColaboradorIdUsuario");
+
+                            b1.ToTable("colaboradores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ColaboradorIdUsuario");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Email", "Email", b1 =>
+                        {
+                            b1.Property<int>("ColaboradorIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Endereco")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ColaboradorIdUsuario");
+
+                            b1.ToTable("colaboradores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ColaboradorIdUsuario");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Telefone", "Telefone", b1 =>
+                        {
+                            b1.Property<int>("ColaboradorIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ColaboradorIdUsuario");
+
+                            b1.ToTable("colaboradores");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ColaboradorIdUsuario");
+                        });
+
+                    b.Navigation("CpfUsuario")
+                        .IsRequired();
+
+                    b.Navigation("Email")
+                        .IsRequired();
+
+                    b.Navigation("Telefone")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Comum", b =>
+                {
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Cpf", "CpfUsuario", b1 =>
+                        {
+                            b1.Property<int>("ComumIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ComumIdUsuario");
+
+                            b1.ToTable("comuns");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ComumIdUsuario");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Email", "Email", b1 =>
+                        {
+                            b1.Property<int>("ComumIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Endereco")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ComumIdUsuario");
+
+                            b1.ToTable("comuns");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ComumIdUsuario");
+                        });
+
+                    b.OwnsOne("WebApiCantina.Domain.VOs.Telefone", "Telefone", b1 =>
+                        {
+                            b1.Property<int>("ComumIdUsuario")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("Numero")
+                                .IsRequired()
+                                .HasColumnType("longtext");
+
+                            b1.HasKey("ComumIdUsuario");
+
+                            b1.ToTable("comuns");
+
+                            b1.WithOwner()
+                                .HasForeignKey("ComumIdUsuario");
+                        });
+
+                    b.Navigation("CpfUsuario")
+                        .IsRequired();
+
+                    b.Navigation("Email")
+                        .IsRequired();
+
+                    b.Navigation("Telefone")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Estoque.Categoria", b =>
                 {
                     b.Navigation("Produtos");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Operacoes.Carrinho", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Operacoes.Carrinho", b =>
                 {
                     b.Navigation("Produtos");
                 });
 
-            modelBuilder.Entity("WebApiCantina.Models.Usuarios.Comum", b =>
+            modelBuilder.Entity("WebApiCantina.Domain.Models.Usuarios.Comum", b =>
                 {
-                    b.Navigation("Produtos");
+                    b.Navigation("Carrinhos");
                 });
 #pragma warning restore 612, 618
         }

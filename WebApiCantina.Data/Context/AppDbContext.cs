@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using WebApiCantina.Data.Services.EntityConfigurations;
 using WebApiCantina.Domain.Models.Estoque;
 using WebApiCantina.Domain.Models.Operacoes;
 using WebApiCantina.Domain.Models.Usuarios;
@@ -24,5 +22,24 @@ namespace WebApiCantina.Data.Context
         public DbSet<Colaborador> colaboradores { get; set; }
 
         public DbSet<Comum> comuns { get; set; }
+
+        internal async Task SaveChangesAsync<T>(EntityEntry<T> result) where T : class
+        {
+            throw new NotImplementedException();
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new CategoriaConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+
+            modelBuilder.Entity<Produto>()
+                .HasOne(p => p.CategoriaProduto)
+                .WithMany(c => c.Produtos)
+                .HasForeignKey(p => p.IdCategoria)
+                .OnDelete(DeleteBehavior.Restrict); // ou .Cascade, dependendo da regra de negócio
+        }
+
     }
 }

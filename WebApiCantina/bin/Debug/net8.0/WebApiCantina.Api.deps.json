@@ -596,6 +596,7 @@
       },
       "WebApiCantina.Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.10",
           "WebApiCantina.Shared": "1.0.0"
         },
         "runtime": {

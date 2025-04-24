@@ -1,5 +1,6 @@
 
 using System.ComponentModel.DataAnnotations;
+using WebApiCantina.Domain.VOs;
 
 namespace WebApiCantina.Domain.Models.Usuarios.Base
 {
@@ -9,18 +10,13 @@ namespace WebApiCantina.Domain.Models.Usuarios.Base
         public int IdUsuario { get; set; }
 
         [Required]
-        [StringLength(11, ErrorMessage = "O CPF deve conter 11 caracteres.",
-                                             MinimumLength = 11)]
-        public string? CpfUsuario { get; set; }
+        public Cpf CpfUsuario { get; set; }
 
         [Required]
-        [StringLength(11, ErrorMessage = "O telefone deve conter 11 caracteres.",
-                                             MinimumLength = 11)]
-        public string? Telefone { get; set; }
+        public Telefone Telefone { get; set; }
 
         [Required]
-        [EmailAddress(ErrorMessage = "O e-mail informado é inválido.")]
-        public string? Email { get; set; }
+        public Email Email { get; set; }
         [Required]
         public DateOnly DataCriacao { get; set; } = new DateOnly(DateTime.Now.Year,
                                                                  DateTime.Now.Month,

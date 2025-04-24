@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApiCantina.Domain.Models.Estoque;
 using WebApiCantina.Domain.Models.Usuarios;
+using WebApiCantina.Domain.VOs;
 
 namespace WebApiCantina.Domain.Models.Operacoes
 {
@@ -17,7 +18,7 @@ namespace WebApiCantina.Domain.Models.Operacoes
         public List<Produto> Produtos { get; set; } = new List<Produto>();
 
         [Required]
-        public double ValorTotal { get; set; } = 0;
+        public Preco ValorTotal { get; set; }
 
         [Required]
         public Comum? Cliente { get; set; }

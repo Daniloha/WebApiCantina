@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebApiCantina.Data.Context;
+using WebApiCantina.Data.Services.Repositories;
+using WebApiCantina.Domain.Services.Interfaces;
 
 namespace WebApiCantina.Api.Extensions
 {
@@ -52,6 +54,9 @@ namespace WebApiCantina.Api.Extensions
              * as requisições.
              * 
             /**************************************************************/
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<IProdutosRepository, ProdutosRepository>();
 
             return services;
         }

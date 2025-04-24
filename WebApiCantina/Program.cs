@@ -1,6 +1,4 @@
-using Microsoft.EntityFrameworkCore;
 using WebApiCantina.Api.Extensions;
-using WebApiCantina.Data.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 

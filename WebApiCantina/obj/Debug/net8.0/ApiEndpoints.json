@@ -108,7 +108,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Application.DTOs.ProdutoDto, WebApiCantina.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -120,15 +120,15 @@
   },
   {
     "ContainingType": "WebApiCantina.Controllers.ProdutosController",
-    "Method": "Post",
+    "Method": "CreateProduto",
     "RelativePath": "api/Produtos",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "produto",
-        "Type": "WebApiCantina.Domain.Models.Estoque.Produto",
+        "Name": "request",
+        "Type": "WebApiCantina.Application.DTOs.ProdutoRequest",
         "IsRequired": true
       }
     ],
@@ -136,7 +136,7 @@
   },
   {
     "ContainingType": "WebApiCantina.Controllers.ProdutosController",
-    "Method": "Get",
+    "Method": "GetbyId",
     "RelativePath": "api/Produtos/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -150,7 +150,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "WebApiCantina.Domain.Models.Estoque.Produto",
+        "Type": "WebApiCantina.Application.DTOs.ProdutoDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -213,7 +213,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Domain.Models.Estoque.Produto, WebApiCantina.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[WebApiCantina.Application.DTOs.ProdutoDto, WebApiCantina.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

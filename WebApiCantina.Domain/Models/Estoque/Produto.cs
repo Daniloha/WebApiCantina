@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using WebApiCantina.Domain.VOs;
 
 namespace WebApiCantina.Domain.Models.Estoque
 {
@@ -13,17 +14,16 @@ namespace WebApiCantina.Domain.Models.Estoque
         [Required]
         [StringLength(500)]
         public string? DescricaoProduto { get; set; }
-        [Required]
-        public Categoria? CategoriaProduto { get; set; }
+        public int IdCategoria { get; set; }  // Apenas o ID da Categoria
+        public virtual Categoria CategoriaProduto { get; set; } // Navegação para Categoria
         [Required]
         public int QuantidadeEstoque { get; set; }
         [Required]
-        public double PrecoVenda { get; set; }
+        public Preco PrecoVenda { get; set; }
         [JsonIgnore]
-        public double PrecoCusto { get; set; }
+        public Preco PrecoCusto { get; set; } 
         [Required]
-        [DataType(DataType.ImageUrl, ErrorMessage = "Imagem invÃ¡lida")]
-        public string? Imagem { get; set; }
+        public UrlImagem Imagem { get; set; }
         [Required]
         public DateOnly DataCriacao { get; set; } = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
     }

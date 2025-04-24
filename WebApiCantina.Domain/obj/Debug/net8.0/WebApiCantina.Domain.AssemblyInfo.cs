@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiCantina.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4730b0ffcd6f5237e115c258a5ca11d6bbf9eff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6b76a51cae2014638ff31bb4253d21c96623910")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiCantina.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiCantina.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,7 @@ ___
 # WebApiCantina
 
 
-## 📄 Sobre o Projeto
+## :page_facing_up: Sobre o Projeto
 
 Este projeto foi desenvolvido utilizando a linguagem de programação C# e a plataforma .NET para criar um backend robusto e seguro, adequado para a gestão de recursos de uma cantina. O frontend é desenvolvido em Angular, permitindo a construção de uma interface de usuário dinâmica e responsiva para a web. O desenvolvimento é feito utilizando o Visual Studio Code e Visual Studio, proporcionando um ambiente de desenvolvimento integrado (IDE) eficiente para programação em C# e Angular.
 
@@ -10,7 +10,7 @@ Para o armazenamento e gerenciamento dos dados, utiliza-se o banco de dados MySQ
 
 ___
 
-## 📂 Estrutura do Projeto
+## :open_file_folder: Estrutura do Projeto
 ```WebApiCantina.sln
 │── /WebApiCantina.Api             -> API e Configuração
 │── /WebApiCantina.Application     -> Casos de Uso, Handlers, Perfis do AutoMapper, Serviços e DTOs
@@ -26,70 +26,79 @@ ___
 
 ---
 
-## ✅ Checklist de Desenvolvimento
+## :white_check_mark: Checklist de Desenvolvimento
 
-### 1️⃣ - Criar a Solução e Projetos
-1. ✅ **Criar a solução no .NET**
-2. ✅ **Adicionar os projetos à solução**
-3. ✅ **Configurar referências entre os projetos**
+### :one: - Criar a Solução e Projetos
+1. :white_check_mark: **Criar a solução no .NET**
+2. :white_check_mark: **Adicionar os projetos à solução**
+3. :white_check_mark: **Configurar referências entre os projetos**
 
-### 2️⃣ - Definir o Domínio (WebApiCantina.Domain)
-1. ✅ **Criar Entidades**  
-   - ✅Usuario
-   - ✅Administrador 
-   - ✅Colaborador  
-   - ✅Comum 
-   - ✅Categoria  
-   - ✅Produtos
-   - ✅Carrinho
-2. 🔲 **Criar Value Objects (VOs) se necessário**
-3. 🔲 **Criar Interfaces de Repositórios**
-4. 🔲 **Criar Exceções de Domínio (DomainException)**
-5. 🔲 **Criar Regras de Negócio dentro das entidades**
+### :two: - Definir o Domínio (WebApiCantina.Domain)
+1. :white_check_mark: **Criar Entidades**  
+   - :white_check_mark: :bust_in_silhouette: Usuario
+   - :white_check_mark: :briefcase: Administrador 
+   - :white_check_mark: :construction_worker: Colaborador  
+   - :white_check_mark: :man: Comum 
+   - :white_check_mark: :pencil: Categoria  
+   - :white_check_mark: :hamburger: Produtos
+   - :white_check_mark: :money_with_wings: Carrinho
+2. :white_check_mark: **Criar Value Objects (VOs) se necessário**
+   - :white_check_mark: :email: Email
+   - :white_check_mark: :pager: Cpf
+   - :white_check_mark: :calendar: Data
+   - :white_check_mark: :moneybag: Preco
+   - :white_check_mark: 📦 Quantidade
+   - :white_check_mark: :iphone: Telefone
+   - :white_check_mark: :city_sunset: UrlImagem
+3. :black_square_button: **Criar Interfaces de Repositórios**
+   - :white_check_mark: GenericRepository
+   - :white_check_mark: ProdutosRepository
+4. :white_check_mark: **Criar Exceções de Domínio (DomainException)**
+5. :black_square_button: **Criar Regras de Negócio dentro das entidades**
 
-### 3️⃣ - Criar Casos de Uso (WebApiCantina.Application)
-1. 🔲 **Criar DTOs**  
-2. 🔲 **Criar Interfaces de Serviços**
-3. 🔲 **Criar Implementação de Serviços**
-4. 🔲 **Criar Handlers (se usar CQRS)**
-5. 🔲 **Configurar Perfis de mapeamento para converter Entidades <-> DTOs**
+### :three: - Criar Casos de Uso (WebApiCantina.Application)
+1. :black_square_button: **Criar DTOs**  
+2. :black_square_button: **Criar Interfaces de Serviços**
+3. :black_square_button: **Criar Implementação de Serviços**
+4. :black_square_button: **Criar Handlers (se usar CQRS)**
+5. :black_square_button: **Configurar Perfis de mapeamento para converter Entidades <-> DTOs**
 
-### 4️⃣ - Implementar a Infraestrutura (WebApiCantina.Infrastructure)
-1. ✅ **Criar o DbContext com Entity Framework Core**
-2. 🔲 **Configurar Entidades com Fluent API**
-3. 🔲 **Implementar os Repositórios**
-4. ✅ **Criar Migrations e Atualizar o Banco**
+### :four: - Implementar a Infraestrutura (WebApiCantina.Infrastructure)
+1. :white_check_mark: **Criar o DbContext com Entity Framework Core**
+2. :black_square_button: **Configurar Entidades com Fluent API**
+3. :black_square_button: **Implementar os Repositórios**
+4. :white_check_mark: **Criar Migrations e Atualizar o Banco**
 
-### 5️⃣ - Criar a API e Configurar Dependências (WebApiCantina.Api)
-1. ✅ **Criar o Program.cs com Minimal API**(Ou utilizando controllers)
-2. 🔲 **Configurar Injeção de Dependência (DI)**
-3. ✅ **Adicionar Swagger**
-4. 🔲 **Criar Endpoints:**  
-   - 🔲Registro de chamados  
-   - 🔲Consultas e atualizações  
-   - 🔲Gestão de escalonamentos  
-   - 🔲Padrões de tratativas  
-5. 🔲 **Criar Middlewares (tratamento de erro, logs, autenticação, etc.)**
-6. ✅ **Adicionar Autenticação e Autorização**
-7. 🔲 **Implementar Integração com Front**
+### :five: - Criar a API e Configurar Dependências (WebApiCantina.Api)
+1. :white_check_mark: **Criar o Program.cs com Minimal API**(Ou utilizando controllers)
+2. :black_square_button: **Configurar Injeção de Dependência (DI)**
+3. :white_check_mark: **Adicionar Swagger**
+4. :black_square_button: **Criar Controllers:**  
+   - :white_check_mark: ProdurtosController
+   - :white_check_mark: CategoriasController
+   - :black_square_button: ColaboradoresController
+   - :black_square_button: ClientesController
+5. :black_square_button: **Criar Middlewares (tratamento de erro, logs, autenticação, etc.)**
+6. :white_check_mark: **Adicionar Autenticação e Autorização**
+7. :black_square_button: **Implementar Integração com Front**
 
-### 6️⃣ - Criar Testes
-#### 🟠 Testes de Unidade
-1. 🔲 **Testes para Entidades e Regras de Negócio (WebApiCantina.Domain.Test)**
-2. 🔲 **Testes para Serviços e Casos de Uso (WebApiCantina.Application.Test)**
+### :six: - Criar Testes
+#### :flags: Testes de Unidade
+1. :black_square_button: **Testes para Entidades e Regras de Negócio (WebApiCantina.Domain.Test)**
+2. :black_square_button: **Testes para Serviços e Casos de Uso (WebApiCantina.Application.Test)**
 
-#### 🔵 Testes de Integração
-1. 🔲 **Testes para Repositórios (WebApiCantina.Infrastructure.Test)**
-2. 🔲 **Testes para Endpoints da API (WebApiCantina.Api.Test)**
+#### :link: Testes de Integração
+1. :black_square_button: **Testes para Repositórios (WebApiCantina.Infrastructure.Test)**
+2. :black_square_button: **Testes para Endpoints da API (WebApiCantina.Api.Test)**
 
-### 7️⃣ - Configurar CI/CD e Publicação
-1. 🔲 **Criar um Dockerfile**
-2. 🔲 **Configurar pipeline CI/CD (GitHub Actions ou Azure DevOps)**
-3. 🔲 **Publicar a API em um ambiente (ex: Railway, Azure, AWS, Render)**
+### :seven: - Configurar CI/CD e Publicação
+1. :black_square_button: **Criar um Dockerfile**
+2. :black_square_button: **Configurar pipeline CI/CD (GitHub Actions ou Azure DevOps)**
+3. :black_square_button: **Publicar a API em um ambiente (ex: Railway, Azure, AWS, Render)**
 
 ___
 
-## 📊 Funcionalidades Principais
+## :bar_chart: Funcionalidades Principais
 
 - **Cadastro e Gerenciamento de Produtos:**  
   Inclui Categoria, nome, quantidade, descrição, preço, dentre outros atributos.
@@ -116,7 +125,7 @@ ___
 
 ___
 
-## 📐 Diagrama de Dependências
+## :triangular_ruler: Diagrama de Dependências
 
 ```
 WebApiCantina.Api  --->  WebApiCantina.Application  --->  WebApiCantina.Domain
