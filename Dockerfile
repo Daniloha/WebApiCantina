@@ -6,8 +6,8 @@ WORKDIR /src
 COPY . .
 
 # Restaura dependências e compila o projeto principal da API
-RUN dotnet restore "./WebApiCantina.Api/WebApiCantina.Api.csproj"
-RUN dotnet publish "./WebApiCantina.Api/WebApiCantina.Api.csproj" -c Release -o /app/publish
+RUN dotnet restore "./WebApiCantina/WebApiCantina.Api.csproj"
+RUN dotnet publish "./WebApiCantina/WebApiCantina.Api.csproj" -c Release -o /app/publish
 
 # Etapa 2: Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
