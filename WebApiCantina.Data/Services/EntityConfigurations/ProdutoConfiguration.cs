@@ -36,11 +36,6 @@ public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
                 v => v.Valor,
                 v => new Preco(v));
 
-        builder.Property(p => p.PrecoCusto)
-            .IsRequired()
-            .HasConversion(
-                v => v.Valor,
-                v => new Preco(v));
 
         builder.Property(p => p.Imagem)
             .IsRequired();
