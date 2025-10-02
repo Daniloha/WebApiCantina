@@ -24,7 +24,7 @@
             }
 
             // Configuração de CORS
-            app.UseCors("AllowAll");
+            app.UseCors("AllowAngularApp");
 
             app.UseHttpsRedirection();// Redirecionar as requisições http para https.
 
