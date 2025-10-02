@@ -80,7 +80,6 @@ namespace WebApiCantina.Controllers
                 IdCategoria = request.IdCategoria,
                 QuantidadeEstoque = request.QuantidadeEstoque,
                 PrecoVenda = request.PrecoVenda,
-                PrecoCusto = request.PrecoCusto,
                 Imagem = request.Imagem,
                 DataCriacao = new DateTime()
             };
