@@ -30,6 +30,23 @@ namespace WebApiCantina.Api.Extensions
 
 
             services.AddControllers();
+
+            /**************************************************************/
+            //SERVIÇOS DE CONFIGURAÇÃO DE CORS
+            /**************************************************************/
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngularApp",
+                    policy =>
+        {
+                        policy.WithOrigins("https://projeto-cantina-web.onrender.com/home") // URL do Angular no Render
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+        });
+            });
+
+
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
