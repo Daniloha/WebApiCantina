@@ -1,0 +1,13 @@
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\WebApiCantina.Shared.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\WebApiCantina.Shared.deps.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\WebApiCantina.Shared.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.EntityFrameworkCore.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.Logging.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.Options.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\out\Microsoft.Extensions.Primitives.dll

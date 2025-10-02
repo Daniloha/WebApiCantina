@@ -100,13 +100,6 @@ C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCant
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets\msbuild.WebApiCantina.Api.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets\msbuild.WebApiCantina.Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets\msbuild.build.WebApiCantina.Api.props
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.WebApiCantina.Api.props
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.WebApiCantina.Api.props
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\WebApiCa.41A74CEE.Up2Date
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\WebApiCantina.Api.dll
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\refint\WebApiCantina.Api.dll
@@ -121,3 +114,9 @@ C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCant
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\bin\Debug\net8.0\WebApiCantina.Data.pdb
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\bin\Debug\net8.0\WebApiCantina.Shared.pdb
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\bin\Debug\net8.0\WebApiCantina.Domain.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

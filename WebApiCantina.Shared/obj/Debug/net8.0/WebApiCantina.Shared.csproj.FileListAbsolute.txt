@@ -10,3 +10,4 @@ C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCant
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Debug\net8.0\refint\WebApiCantina.Shared.dll
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Debug\net8.0\WebApiCantina.Shared.pdb
 C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Debug\net8.0\ref\WebApiCantina.Shared.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Debug\net8.0\WebApiCantina.Shared.csproj.AssemblyReference.cache

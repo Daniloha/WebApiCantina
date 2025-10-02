@@ -16,10 +16,10 @@ namespace WebApiCantina.Domain.Models.Estoque
         public string? DescricaoCategoria { get; set; }
 
         [Required]
-        public UrlImagem ImagemCategoria { get; set; }
+        public string ImagemCategoria { get; set; }
 
         [Required]
-        public DateOnly DataCriacao { get; set; } = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        public DateTime DataCriacao { get; set; } = DateTime.Now;
 
         [JsonIgnore]
         public  ICollection<Produto>? Produtos { get; set; }

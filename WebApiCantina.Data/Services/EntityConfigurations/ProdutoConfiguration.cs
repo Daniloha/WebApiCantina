@@ -9,13 +9,10 @@ public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
 {
     public void Configure(EntityTypeBuilder<Produto> builder)
     {
-        // Table name
         builder.ToTable("Produtos");
 
-        // Primary Key
         builder.HasKey(p => p.IdProduto);
 
-        // Properties
         builder.Property(p => p.IdProduto)
             .ValueGeneratedOnAdd();
 
@@ -40,23 +37,20 @@ public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
                 v => new Preco(v));
 
         builder.Property(p => p.PrecoCusto)
+            .IsRequired()
             .HasConversion(
                 v => v.Valor,
                 v => new Preco(v));
 
         builder.Property(p => p.Imagem)
-            .IsRequired()
-            .HasConversion(
-                v => v.Url,
-                v => new UrlImagem(v));
+            .IsRequired();
 
         builder.Property(p => p.DataCriacao)
             .IsRequired();
 
-        // Relationships
         builder.HasOne(p => p.CategoriaProduto)
             .WithMany(c => c.Produtos)
             .HasForeignKey(p => p.IdCategoria)
-            .OnDelete(DeleteBehavior.Restrict); // Or Cascade if you want to delete products when category is deleted
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

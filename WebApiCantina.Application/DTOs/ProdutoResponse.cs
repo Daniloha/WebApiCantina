@@ -11,6 +11,6 @@ public class ProdutoResponse
     public string NomeCategoria { get; set; }  // Nome da categoria
     public int QuantidadeEstoque { get; set; }
     public Preco PrecoVenda { get; set; }
-    public UrlImagem Imagem { get; set; }
-    public DateOnly DataCriacao { get; set; }
+    public string Imagem { get; set; }
+    public DateTime DataCriacao { get; set; }
 }

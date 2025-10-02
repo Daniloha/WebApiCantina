@@ -10,6 +10,6 @@ namespace WebApiCantina.Application.DTOs
         public int QuantidadeEstoque { get; set; }
         public Preco PrecoVenda { get; set; }
         public Preco PrecoCusto { get; set; } 
-        public UrlImagem Imagem { get; set; }
+        public string Imagem { get; set; }
     }
 }

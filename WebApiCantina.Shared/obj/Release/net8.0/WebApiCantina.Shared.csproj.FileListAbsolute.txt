@@ -1,0 +1,13 @@
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\bin\Release\net8.0\WebApiCantina.Shared.deps.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\bin\Release\net8.0\WebApiCantina.Shared.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\bin\Release\net8.0\WebApiCantina.Shared.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.csproj.AssemblyReference.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.AssemblyInfoInputs.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.AssemblyInfo.cs
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.csproj.CoreCompileInputs.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.sourcelink.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\refint\WebApiCantina.Shared.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\WebApiCantina.Shared.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Shared\obj\Release\net8.0\ref\WebApiCantina.Shared.dll

@@ -23,8 +23,8 @@ namespace WebApiCantina.Domain.Models.Estoque
         [JsonIgnore]
         public Preco PrecoCusto { get; set; } 
         [Required]
-        public UrlImagem Imagem { get; set; }
+        public string Imagem { get; set; }
         [Required]
-        public DateOnly DataCriacao { get; set; } = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+        public DateTime DataCriacao { get; set; } = DateTime.Now;
     }
 }

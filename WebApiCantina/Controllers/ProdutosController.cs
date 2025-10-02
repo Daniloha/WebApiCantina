@@ -82,7 +82,7 @@ namespace WebApiCantina.Controllers
                 PrecoVenda = request.PrecoVenda,
                 PrecoCusto = request.PrecoCusto,
                 Imagem = request.Imagem,
-                DataCriacao = new DateOnly(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day) // Data gerada no backend
+                DataCriacao = new DateTime()
             };
 
             // Adiciona o produto ao contexto e salva no banco de dados

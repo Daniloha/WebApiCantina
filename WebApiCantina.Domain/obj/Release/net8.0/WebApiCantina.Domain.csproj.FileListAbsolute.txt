@@ -1,0 +1,16 @@
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\bin\Release\net8.0\WebApiCantina.Domain.deps.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\bin\Release\net8.0\WebApiCantina.Domain.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\bin\Release\net8.0\WebApiCantina.Domain.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\bin\Release\net8.0\WebApiCantina.Shared.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\bin\Release\net8.0\WebApiCantina.Shared.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.csproj.AssemblyReference.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.AssemblyInfoInputs.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.AssemblyInfo.cs
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.csproj.CoreCompileInputs.cache
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.sourcelink.json
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCa.10309413.Up2Date
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\refint\WebApiCantina.Domain.dll
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\WebApiCantina.Domain.pdb
+C:\Users\nilo_\Favorites\Links\Projetos\.Net\ApiCantina\WebApiCantina\WebApiCantina.Domain\obj\Release\net8.0\ref\WebApiCantina.Domain.dll

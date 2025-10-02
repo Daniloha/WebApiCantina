@@ -415,11 +415,12 @@
             "type": "string"
           },
           "imagemCategoria": {
-            "$ref": "#/components/schemas/UrlImagem"
+            "minLength": 1,
+            "type": "string"
           },
           "dataCriacao": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -438,7 +439,6 @@
         "required": [
           "dataCriacao",
           "descricaoProduto",
-          "idCategoria",
           "imagem",
           "nomeProduto",
           "precoVenda",
@@ -475,11 +475,12 @@
             "$ref": "#/components/schemas/Preco"
           },
           "imagem": {
-            "$ref": "#/components/schemas/UrlImagem"
+            "minLength": 1,
+            "type": "string"
           },
           "dataCriacao": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -511,11 +512,12 @@
             "$ref": "#/components/schemas/Preco"
           },
           "imagem": {
-            "$ref": "#/components/schemas/UrlImagem"
+            "type": "string",
+            "nullable": true
           },
           "dataCriacao": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -546,15 +548,6 @@
             "$ref": "#/components/schemas/Preco"
           },
           "imagem": {
-            "$ref": "#/components/schemas/UrlImagem"
-          }
-        },
-        "additionalProperties": false
-      },
-      "UrlImagem": {
-        "type": "object",
-        "properties": {
-          "url": {
             "type": "string",
             "nullable": true
           }
