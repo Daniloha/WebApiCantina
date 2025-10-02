@@ -38,7 +38,7 @@ namespace WebApiCantina.Data.Context
                 {
                     IdCategoria = 2,
                     NomeCategoria = "Salgados",
-                    DescricaoCategoria = "Categoria para salgados como coxinhas, pastéis, etc.",
+                    DescricaoCategoria = "Categoria para salgados como coxinhas, pastÃ©is, etc.",
                     ImagemCategoria = "https://example.com/images/salgados.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -61,8 +61,8 @@ namespace WebApiCantina.Data.Context
                 new
                 {
                     IdCategoria = 5,
-                    NomeCategoria = "Cafés",
-                    DescricaoCategoria = "Categorias para cafés",
+                    NomeCategoria = "CafÃ©s",
+                    DescricaoCategoria = "Categorias para cafÃ©s",
                     ImagemCategoria = "https://example.com/images/cafes.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 }
@@ -78,7 +78,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 1,
                     QuantidadeEstoque = 50,
                     PrecoVenda = 5.00,
-                    PrecoCusto = 3.00,
                     Imagem = "https://example.com/images/refrigerante.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -90,7 +89,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 2,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 4.00,
-                    PrecoCusto = 2.00,
                     Imagem = "https://example.com/images/coxinha.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -102,7 +100,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 1,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 6.00,
-                    PrecoCusto = 4.00,
                     Imagem = "https://example.com/images/suco.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -114,7 +111,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 2,
                     QuantidadeEstoque = 20,
                     PrecoVenda = 7.00,
-                    PrecoCusto = 5.00,
                     Imagem = "https://example.com/images/pastel.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -126,7 +122,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 5,
                     QuantidadeEstoque = 40,
                     PrecoVenda = 8.00,
-                    PrecoCusto = 6.00,
                     Imagem = "https://example.com/images/cafe.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -150,7 +145,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 3,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 10.00,
-                    PrecoCusto = 8.00,
                     Imagem = "https://example.com/images/bolo.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -162,7 +156,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 4,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 11.00,
-                    PrecoCusto = 9.00,
                     Imagem = "https://example.com/images/brigadeiro.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -174,7 +167,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 4,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 12.00,
-                    PrecoCusto = 10.00,
                     Imagem = "https://example.com/images/torta.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -186,19 +178,17 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 1,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 13.00,
-                    PrecoCusto = 11.00,
                     Imagem = "https://example.com/images/coca-cola.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
                 new
                 {
                     IdProduto = 11,
-                    NomeProduto = "Pão de queijo",
-                    DescricaoProduto = "Pão de queijo.",
+                    NomeProduto = "PÃ£o de queijo",
+                    DescricaoProduto = "PÃ£o de queijo.",
                     IdCategoria = 4,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 14.00,
-                    PrecoCusto = 12.00,
                     Imagem = "https://example.com/images/pao.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 },
@@ -210,7 +200,6 @@ namespace WebApiCantina.Data.Context
                     IdCategoria = 2,
                     QuantidadeEstoque = 30,
                     PrecoVenda = 15.00,
-                    PrecoCusto = 13.00,
                     Imagem = "https://example.com/images/esfirra.jpg",
                     DataCriacao = new DateTime(2025, 5, 16)
                 }
